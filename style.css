@@ -93,6 +93,11 @@ p {
   right: -1.875rem;
 }
 
+.intro-cover img {
+  object-fit: cover;
+  height: 100%;
+}
+
 .button {
   background: #e21;
   color: #fff;
@@ -145,4 +150,42 @@ p {
   text-align: center;
   padding: 2.5rem;
   box-sizing: border-box;
+}
+
+@media (max-width: 1000px) {
+  .content-advantages {
+    grid-template-columns: 1fr;
+  }
+  .subtitle {
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .header {
+    gap: 30px;
+  }
+  .content {
+    grid-template-columns: 1fr;
+  }
+  .intro {
+    text-align: left;
+  }
+  .intro::before {
+    display: none;
+    justify-items: start;
+  }
+  .subtitle {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .subtitle {
+    font-size: 2rem;
+  }
 }
