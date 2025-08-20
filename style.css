@@ -1,12 +1,33 @@
+:root {
+  --color-primary: #e21;
+  --color-primary-dark: #900;
+  --background-1: #f7f7f7;
+  --background-2: #ffffff;
+  --text: #000000;
+  --subtitle: rgba(0, 0, 0, 0.2);
+  --wave: url("./img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-1: #111111;
+    --background-2: #000000;
+    --text: #ffffff;
+    --subtitle: rgba(255, 255, 255, 0.2);
+    --wave: url("./img/onda-escura.svg");
+  }
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 530;
   margin: 0px;
-  background-color: #f7f7f7;
+  background-color: var(--background-1);
   display: grid;
   gap: 3.75rem;
   justify-items: center;
   margin-top: 3.75rem;
+  color: var(--text);
 }
 
 img {
@@ -52,16 +73,16 @@ p {
 
 .menu a {
   display: block;
-  background-color: #fff;
+  background-color: var(--background-2);
   padding: 0.9375rem 1.875rem;
-  color: #000000;
+  color: var(--text);
   text-transform: uppercase;
-  border: 2px solid #fff;
+  border: 2px solid var(--background-2);
   border-radius: 4px;
 }
 
 .menu a:hover {
-  border-color: #e21;
+  border-color: var(--color-primary);
 }
 
 .content {
@@ -71,7 +92,7 @@ p {
 }
 .intro {
   position: relative;
-  background-color: #fff;
+  background-color: var(--background-2);
   padding: 2.5rem;
   text-align: right;
   display: grid;
@@ -87,7 +108,7 @@ p {
   content: "";
   width: 3.75rem;
   height: 4px;
-  background: #e21;
+  background: var(--color-primary);
   position: absolute;
   top: 1.875rem;
   right: -1.875rem;
@@ -99,28 +120,28 @@ p {
 }
 
 .button {
-  background: #e21;
-  color: #fff;
+  background: var(--color-primary);
+  color: #ffffff;
   padding: 0.9375rem 1.875rem;
   border-radius: 4px;
   text-transform: uppercase;
 }
 .button:hover {
-  background: #900;
+  background: var(--color-primary-dark);
 }
 
 .subtitle {
   font-size: 4rem;
   text-transform: uppercase;
-  color: rgba(0, 0, 0, 0.2);
+  color: var(--subtitle);
   text-align: right;
   padding: 2.5rem;
   align-self: center;
-  background-image: url("./img/onda.svg");
+  background-image: var(--wave);
 }
 
 .advantages {
-  background: #fff;
+  background: var(--background-2);
   padding: 2.5rem;
 }
 
@@ -133,7 +154,7 @@ p {
 }
 
 .advantages-item:nth-child(odd) {
-  background: #f7f7f7;
+  background: var(--background-1);
 }
 
 .advantages-item p {
@@ -141,11 +162,11 @@ p {
 }
 
 .advantages-item:hover {
-  border-color: #e21;
+  border-color: var(--color-primary);
 }
 
 .footer {
-  background: #fff;
+  background: var(--background-2);
   width: 100%;
   text-align: center;
   padding: 2.5rem;
